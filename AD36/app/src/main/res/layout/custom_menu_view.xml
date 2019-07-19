@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_gravity="center"
+    >
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_local_grocery_store_black_24dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/layout_circle"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_gravity="right|top"
+        android:background="@drawable/custom_toolbar_icon"
+        >
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+    </FrameLayout>
+
+</FrameLayout>

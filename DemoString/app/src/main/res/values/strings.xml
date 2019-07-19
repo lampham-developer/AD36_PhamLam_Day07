@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DemoString</string>
+
+    <string name="tvName">Hello</string>
+</resources>
