@@ -1,5 +1,6 @@
 package com.example.ad36.Foods;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ad36.MainActivity;
-import com.example.ad36.MyService;
+import com.example.ad36.Data.DataHandler;
 import com.example.ad36.R;
 
 import java.util.List;
@@ -19,9 +19,16 @@ import java.util.List;
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.Viewhoder> {
 
     List<Food> foodList;
+    Context context;
+    ClickFood clickFood;
 
-    public FoodAdapter(List<Food> foodList) {
+    public FoodAdapter(List<Food> foodList, Context context) {
         this.foodList = foodList;
+        this.context = context;
+    }
+
+    public void setClickFood(ClickFood clickFood) {
+        this.clickFood = clickFood;
     }
 
     @NonNull
@@ -44,6 +51,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.Viewhoder> {
         holder.lnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+                DataHandler dataHandler = new DataHandler(context);
+                dataHandler.updateOrder(food.getId());
+                clickFood.onClick(dataHandler.getCountOrder());
             }
         });
 

@@ -1,7 +1,9 @@
 package com.example.ad36;
 
+
 import android.os.Bundle;
 
+import com.example.ad36.Data.DataHandler;
 import com.example.ad36.Foods.Food;
 import com.example.ad36.Fragment.Drink_Fragment;
 import com.example.ad36.Fragment.Food_Fragment;
@@ -13,23 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
-    TextView mTextMessage;
-    TextView tvCount;
-    FrameLayout layout_circle;
-    HashMap<Integer, Integer> orderList = new HashMap<>();
+    DataHandler dataHandler;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -57,9 +51,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Foods store");
         BottomNavigationView navView = findViewById(R.id.nav);
-        mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        dataHandler = new DataHandler(getBaseContext());
+        dataHandler.createTable();
+        addBaseFood();
 
+        getFragment(Food_Fragment.newInstant());
     }
 
     public void getFragment(Fragment fragment) {
@@ -73,19 +70,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem item = menu.findItem(R.id.localgrocery);
-        FrameLayout rootView =(FrameLayout)item.getActionView();
-        layout_circle = (FrameLayout)rootView.findViewById(R.id.layout_circle);
-        tvCount = (TextView)rootView.findViewById(R.id.tvCount);
-        return super.onPrepareOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.custom_menu, menu);
-        return true;
+    private void addBaseFood(){
+        List<Food> foodList = new ArrayList<>();
+        Food f;
+        f = new Food(1, "Gà rán", "3 miếng", "foods", R.drawable.garan3, 99000); foodList.add(f);
+        f = new Food(2, "Gà rán", "6 miếng", "foods", R.drawable.garan6, 195000); foodList.add(f);
+        f = new Food(3, "Gà rán", "9 miếng", "foods", R.drawable.garan9, 289000); foodList.add(f);
+        f = new Food(4, "Gà rán", "12 miếng", "foods", R.drawable.garan12, 379000); foodList.add(f);
+        f = new Food(5, "Gà quay", "1 miếng", "foods", R.drawable.gaquay, 69000); foodList.add(f);
+        f = new Food(5, "Burger", "Zinger", "foods", R.drawable.zinger, 79000); foodList.add(f);
+        f = new Food(1, "Coca", "Size M", "drinks", R.drawable.coca, 19000);foodList.add(f);
+        f = new Food(1, "Coca", "Size L", "drinks", R.drawable.coca, 29000);foodList.add(f);
+        f = new Food(1, "Pepsi", "Size M", "drinks", R.drawable.pepsi, 19000);foodList.add(f);
+        f = new Food(1, "Pepsi", "Size L", "drinks", R.drawable.pepsi, 29000);foodList.add(f);
+        f = new Food(1, "Khoai tây", "Cỡ vừa", "sidedish", R.drawable.potato, 29000); foodList.add(f);
+        f = new Food(1, "Khoai tây", "Cỡ lớn", "sidedish", R.drawable.potato, 39000);foodList.add(f);
+        f = new Food(1, "Salad bắp cải", "Cỡ vừa", "sidedish", R.drawable.salad, 19000); foodList.add(f);
+        f = new Food(1, "Salad bắp cải", "Cỡ lớn", "sidedish", R.drawable.salad, 29000);foodList.add(f);
+
+        for (Food food: foodList) {
+            dataHandler.addNewFood(food);
+        }
     }
 }

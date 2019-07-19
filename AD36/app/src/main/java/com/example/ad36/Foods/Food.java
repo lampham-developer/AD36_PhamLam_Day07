@@ -3,12 +3,12 @@ package com.example.ad36.Foods;
 public class Food {
     String name, descrip, type;
     int id, iconId;
-    double price;
+    int price;
 
     public Food() {
     }
 
-    public Food( int id, String name, String descrip, String type, int iconId, double price) {
+    public Food( int id, String name, String descrip, String type, int iconId, int price) {
         this.name = name;
         this.descrip = descrip;
         this.type = type;
@@ -57,11 +57,11 @@ public class Food {
         this.iconId = iconId;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
