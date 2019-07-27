@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/login_background"
+
     tools:context=".Activity.RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí toàn khoản"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,46 +28,53 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_above="@id/linearPassReg"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_account"/>
             <EditText
                 android:id="@+id/etRegUsername"
-                android:background="@color/white"
+                android:background="@drawable/custon_border"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
+                android:hint="@string/username"
+                android:maxLength="10"
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/linearPassReg"
+            android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
             >
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_lock"/>
             <EditText
                 android:id="@+id/etRegPassword"
-                android:background="@color/white"
+                android:background="@drawable/custon_border"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
+                android:hint="@string/password"
                 />
         </LinearLayout>
         <LinearLayout
@@ -64,39 +82,47 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="20dp"
+            android:layout_below="@id/linearPassReg"
             >
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_lock"/>
             <EditText
                 android:id="@+id/etReRegPassword"
-                android:background="@color/white"
+                android:background="@drawable/custon_border"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
+                android:hint="Re-Enter Password"
                 />
         </LinearLayout>
-        <Button
-            android:id="@+id/btReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đồng ý"
-            />
-        <Button
-            android:id="@+id/btCancelReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thoát"
-            />
-
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/custon_border"
+        android:text="Đồng ý"
+        />
+    <Button
+        android:id="@+id/btCancelReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/custon_border"
+        android:text="Thoát"
+        />
 
 </RelativeLayout>

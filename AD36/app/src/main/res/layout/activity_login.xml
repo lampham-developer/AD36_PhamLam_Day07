@@ -4,9 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/login_background"
     tools:context=".Activity.LoginActivity">
-<LinearLayout
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/blue"
+        android:layout_centerHorizontal="true"
+        />
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -14,64 +25,80 @@
     android:layout_margin="20dp"
     >
     <LinearLayout
+        android:id="@+id/layoutusrname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_account"/>
         <EditText
             android:id="@+id/etLoginUsername"
-            android:background="@color/white"
+            android:background="@drawable/custon_border"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:textColor="@color/black"
             android:textCursorDrawable="@null"
+            android:hint="@string/username"
+            android:maxLength="10"
             />
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/layoutpass"
+        android:layout_below="@id/layoutusrname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         >
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_lock"/>
         <EditText
             android:id="@+id/etLoginPassword"
-            android:background="@color/white"
+            android:background="@drawable/custon_border"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:inputType="textPassword"
             android:textColor="@color/black"
             android:textCursorDrawable="@null"
+            android:hint="@string/password"
             />
     </LinearLayout>
     <Button
+        android:layout_below="@id/layoutpass"
+        android:layout_centerHorizontal="true"
         android:id="@+id/btLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
         android:text="Lego"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custon_border"
         />
 
     <TextView
         android:id="@+id/tvRegister"
+        android:layout_below="@id/btLogin"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Or Register"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         android:textAllCaps="false"
         android:textStyle="italic|bold" />
 
-</LinearLayout>
+</RelativeLayout>
 </RelativeLayout>
