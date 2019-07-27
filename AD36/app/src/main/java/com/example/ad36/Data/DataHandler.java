@@ -18,7 +18,7 @@ public class DataHandler extends SQLiteOpenHelper {
     NameContainer nameContainer = new NameContainer();
 
     public static final String DATABASE_NAME = "Food_Manager";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 4;
     public DataHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -34,7 +34,7 @@ public class DataHandler extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(create_table_food);
         sqLiteDatabase.execSQL(create_table_user);
 
-        onCreateData();
+        onCreateData(sqLiteDatabase);
     }
 
     @Override
@@ -53,10 +53,10 @@ public class DataHandler extends SQLiteOpenHelper {
     //DATA CONTROLLER
     //
 
-    private void onCreateData(){
+    private void onCreateData(SQLiteDatabase sqLiteDatabase){
         dataOnCreate = new DataOnCreate();
         for ( Food food: dataOnCreate.baseFood()){
-            addNewFood(food);
+            addNewFood(food, sqLiteDatabase);
         }
     }
 
@@ -65,8 +65,7 @@ public class DataHandler extends SQLiteOpenHelper {
     //FOOD CONTROLLER
     //
 
-    public void addNewFood(Food f) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    public void addNewFood(Food f, SQLiteDatabase sqLiteDatabase) {
 
         ContentValues contentValues = new ContentValues();
 
@@ -77,7 +76,7 @@ public class DataHandler extends SQLiteOpenHelper {
         contentValues.put(nameContainer.KEY_FOOD_PRICE, f.getPrice());
 
         sqLiteDatabase.insert(nameContainer.TABLE_FOOD_NAME, null, contentValues);
-        sqLiteDatabase.close();
+//        sqLiteDatabase.close();
     }
 
     public List<Food> getFoodList(String type) {

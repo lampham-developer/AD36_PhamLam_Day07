@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ad36.Data.DataHandler;
+import com.example.ad36.Interface.ClickFood;
 import com.example.ad36.R;
 
 import java.util.List;

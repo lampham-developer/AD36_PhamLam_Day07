@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MVPDatabinding</string>
+
+    <!--Login-->
+    <string name="txtForgotPassword"><a href="https://accounts.fpts.com.vn/forgotpassword">Forgot password?</a></string>
+    <string name="txtHelp"><a href="https://accounts.fpts.com.vn/help?s=14">Help</a></string>
+    <string name="txtRegister"><a href="http://ezopen.fpts.com.vn/pages/default.aspx">Register</a></string>
+    <string name="login">Log in</string>
+    <string name="Remember_account">Remember account</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="username">UserName</string>
+
+    <string name="change_password_error">Enter new password</string>
+    <string name="change_user_error">Enter new username</string>
+</resources>

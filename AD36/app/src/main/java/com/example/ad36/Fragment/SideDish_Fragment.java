@@ -15,12 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ad36.Data.DataHandler;
-import com.example.ad36.Foods.ClickFood;
+import com.example.ad36.Interface.ClickFood;
 import com.example.ad36.Foods.Food;
 import com.example.ad36.Foods.FoodAdapter;
 import com.example.ad36.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

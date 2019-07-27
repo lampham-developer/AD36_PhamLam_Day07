@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Food Store</string>
+
     <string name="title_food">Đồ ăn</string>
     <string name="title_drink">Đồ uống</string>
     <string name="title_sidedish">Ăn kèm</string>
 
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

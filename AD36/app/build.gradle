@@ -34,4 +34,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:29.0.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 }
